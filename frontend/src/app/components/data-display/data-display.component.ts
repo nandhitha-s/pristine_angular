@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './data-display.component.scss'
 })
 export class DataDisplayComponent {
-
+  
 }
