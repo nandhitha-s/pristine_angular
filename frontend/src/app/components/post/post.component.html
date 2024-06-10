@@ -1,0 +1,24 @@
+<div *ngIf="posts.length">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <td>{{ post.id }}</td>
+          <td>{{ post.name }}</td>
+          <td>{{ post.description }}</td>
+          <td>{{ post.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!posts.length">
+    No posts available.
+  </div>
+  
