@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.css'
+  styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent {
 

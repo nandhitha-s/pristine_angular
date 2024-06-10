@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module'; 
 import { AppComponent } from './app.component';
@@ -16,24 +17,34 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { SignupComponent } from "./components/signup/signup.component";
 import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
+import { PostsComponent } from "./components/posts/posts.component";
+
+
 
 @NgModule({
-    declarations: [
-        AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent
-    ],
-    imports: [
-        BrowserModule,
-        NoopAnimationsModule,
-        AppRoutingModule,
-        MatButtonModule,
-        MatCardModule,
-        MatIconModule,
-        MatListModule,
-        MatInputModule,
-        MatToolbarModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [   
+    AppComponent,
+    NavigationComponent,
+    SignupComponent,
+    LoginComponent,
+    HomeComponent,
+    PostsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    NoopAnimationsModule,
+    AppRoutingModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatListModule,
+    MatInputModule,
+    MatToolbarModule,
+    ReactiveFormsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
 
