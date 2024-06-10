@@ -11,15 +11,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule, } from '@angular/material/toolbar';
 
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SignupComponent } from "./components/signup/signup.component";
 import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
 import { PostsComponent } from "./components/posts/posts.component";
-
-
 
 @NgModule({
   declarations: [   
