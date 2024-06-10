@@ -4,6 +4,7 @@ import { DataDisplayComponent } from './components/data-display/data-display.com
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { PostComponent } from './components/post/post.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,9 +15,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    PostComponent
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'frontend';
