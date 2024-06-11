@@ -1,15 +1,8 @@
-
-<ng-container *ngTemplateOutlet="postTemplate; context: { $implicit: posts }"></ng-container>
-
-<ng-template #postTemplate let-posts>
-  <div *ngIf="posts && posts.length > 0">
-    <h1>{{ posts[0].name }}</h1>
-    <p><strong>Preparation Time:</strong> {{ posts[0].preptime }} minutes</p>
-    <p><strong>Cost:</strong> ${{ posts[0].cost }}</p>
-    <p><strong>Stock:</strong> {{ posts[0].stock }}</p>
-    <img [src]="posts[0].imageUrl" alt="Image" width="200">
+<div *ngFor="let post of posts">
+    <h1>{{ post.name }}</h1>
+    <p><strong>Preparation Time:</strong> {{ post.preptime }} minutes</p>
+    <p><strong>Cost:</strong> ${{ post.cost }}</p>
+    <p><strong>Stock:</strong> {{ post.stock }}</p>
+    <img [src]="post.imageUrl" alt="Image" width="200">
   </div>
-</ng-template>
-
-  
   
