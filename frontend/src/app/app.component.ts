@@ -5,6 +5,11 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PostComponent } from './components/post/post.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+//import { HttpClient, HttpClientModule } from '@angular/common/http';
+// import { HttpModule } from '@angular/http';
+//import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -15,8 +20,10 @@ import { PostComponent } from './components/post/post.component';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    PostComponent
+    PostComponent,
+    HttpClientModule,
   ],
+  providers: [HttpClient],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
