@@ -18,6 +18,9 @@ import { SignupComponent } from "./components/signup/signup.component";
 import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
 import { PostsComponent } from "./components/posts/posts.component";
+import { HttpClientModule } from "@angular/common/http";
+import { PostService } from "./services/post.service";
+import { PostComponent } from "./components/post/post.component";
 
 @NgModule({
   declarations: [   
@@ -27,6 +30,7 @@ import { PostsComponent } from "./components/posts/posts.component";
     LoginComponent,
     HomeComponent,
     PostsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,7 @@ import { PostsComponent } from "./components/posts/posts.component";
     MatInputModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

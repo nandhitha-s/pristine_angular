@@ -1,15 +1,22 @@
-var mysql = require('mysql');
+const express = require('express');
+const mysql = require('mysql2');
+const app = express();
+const port = 3000;
 
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Nandana@123",
+  password: "Aswanth2005$",
   database: "posts"
 });
 
 con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM posts.food", function (err, result, fields) {
+  console.log("Connected to the database!");
+});
+
+app.get('/api/posts', (req, res) => {
+  con.query("SELECT * FROM food", function (err, result, fields) {
     if (err) throw err;
     res.json(result);
   });
