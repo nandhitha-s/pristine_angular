@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
+  router: any;
   constructor() {}
   ngOnInit() : void {
     this.signupForm = this.createFormGroup(); 
@@ -26,5 +27,7 @@ export class SignupComponent implements OnInit {
   }
   onSubmit(): void {
     console.log(this.signupForm.value);
+    // this.router.navigateByUrl('/login');
   }
 }
+
