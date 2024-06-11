@@ -7,11 +7,11 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'posts', component: PostsComponent },
-  { path: 'login', component: LoginComponent },
-  { path:'signup', component: SignupComponent },
-  { path: '**', redirectTo: '' }
+  { path: "", component: HomeComponent },
+  { path: "posts", component: PostsComponent },
+  { path: "login", component: LoginComponent },
+  { path:"signup", component: SignupComponent },
+  { path: "**", redirectTo: "" }
 ];
 
 @NgModule({
@@ -19,5 +19,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  static routes: Routes;
 }
