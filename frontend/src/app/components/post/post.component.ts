@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
-import { CommonModule } from '@angular/common';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-posts',
-  standalone: true,
   templateUrl: './post.component.html',
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  styleUrls: ['./post.component.scss']
+  styleUrls: ['./post.component.scss'],
+  standalone: true,
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
   posts: any[] = [];
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.postService.getPosts().subscribe(data => {
       this.posts = data;
+      this.posts.forEach(post => {
+        const blob = new Blob([post.image], { type: 'image/jpeg' });
+        post.imageUrl = this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(blob));
+      });
     });
   }
 }
