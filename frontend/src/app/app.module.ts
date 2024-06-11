@@ -1,6 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 import { AppRoutingModule } from './app-routing.module'; 
 import { AppComponent } from './app.component';
@@ -40,6 +43,8 @@ import { PostComponent } from "./components/post/post.component";
     MatCardModule,
     MatIconModule,
     MatListModule,
+    BrowserAnimationsModule,       
+    MatFormFieldModule,   
     MatInputModule,
     MatToolbarModule,
     ReactiveFormsModule,

@@ -21,10 +21,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    HomeComponent
-    
+    HomeComponent,
     PostComponent,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [HttpClient],
   templateUrl: './app.component.html',
