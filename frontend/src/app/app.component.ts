@@ -7,7 +7,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { NgFor } from '@angular/common';
+=======
+import { SignupComponent } from './components/signup/signup.component';
+>>>>>>> f8caa308780e02dbf969a0efcffd8a2d92f1d476
 //import { HttpClient, HttpClientModule } from '@angular/common/http';
 // import { HttpModule } from '@angular/http';
 //import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -25,7 +29,11 @@ import { NgFor } from '@angular/common';
     HomeComponent,
     PostComponent,
     HttpClientModule,
+<<<<<<< HEAD
     NgFor,
+=======
+    SignupComponent
+>>>>>>> f8caa308780e02dbf969a0efcffd8a2d92f1d476
   ],
   providers: [HttpClient],
   templateUrl: './app.component.html',
