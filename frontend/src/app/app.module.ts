@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgFor } from "@angular/common";
 
 
 import { AppRoutingModule } from './app-routing.module'; 
@@ -24,6 +25,7 @@ import { PostsComponent } from "./components/posts/posts.component";
 import { HttpClientModule } from "@angular/common/http";
 import { PostService } from "./services/post.service";
 import { PostComponent } from "./components/post/post.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [   
@@ -33,7 +35,7 @@ import { PostComponent } from "./components/post/post.component";
     LoginComponent,
     HomeComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,9 @@ import { PostComponent } from "./components/post/post.component";
     MatInputModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    NgFor,
   ],
   providers: [],
   bootstrap: [AppComponent],
