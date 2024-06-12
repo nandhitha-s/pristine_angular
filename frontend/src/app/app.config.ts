@@ -17,6 +17,7 @@ export const routes: Routes = [{ path: "", component: HomeComponent },
 { path: "login", component: LoginComponent },
 { path:"signup", component: SignupComponent },
 { path: "**", redirectTo: "" }];
+  
 export const appConfig: ApplicationConfig = {
   providers: [
     provideClientHydration(),

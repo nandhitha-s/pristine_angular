@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module'; 
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
@@ -18,16 +18,13 @@ import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
 import { HttpClient, provideHttpClient, withFetch } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
-import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 
 @NgModule({
     declarations: [
         AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent
     ],
     imports: [
-      BrowserModule,
-      
-        
+        BrowserModule,
         NoopAnimationsModule,
         AppRoutingModule,
         MatButtonModule,
@@ -37,7 +34,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
         MatInputModule,
         MatToolbarModule,
         CommonModule,
-        RouterOutlet, RouterLink, RouterLinkActive,
+        ReactiveFormsModule,
     ],
     providers: [
         {
