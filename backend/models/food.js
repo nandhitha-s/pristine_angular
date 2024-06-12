@@ -1,5 +1,6 @@
-const express = require('express');
-const mysql = require('mysql2');
+import express from 'express';
+import mysql from 'mysql2';
+
 const app = express();
 const port = 3000;
 
@@ -16,9 +17,13 @@ con.connect(function(err) {
 });
 
 app.get('/api/posts', (req, res) => {
-  con.query("SELECT * FROM food", function (err, result, fields) {
-    if (err) throw err;
-    res.json(result);
+  const query = 'SELECT * FROM food';
+  con.query(query, (error, results) => {
+    if (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+    res.json(results);
   });
 });
 
