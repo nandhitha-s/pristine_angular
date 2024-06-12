@@ -14,7 +14,7 @@ async function query(sql, params) {
     console.log(results);
     return results;
   } catch (error) {
-    
+   
   }
 }
 
