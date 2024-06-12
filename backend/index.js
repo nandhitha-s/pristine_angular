@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
 //const cors = require('cors');
+const foodRouter = require("./models/food");
 const errController = require('./controllers/error');
 const app = express();
 const ports = process.env.PORT || 3000;
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use('/auth', authRoutes);
+app.use('/api/food',foodRouter)
 app.use(errController.get404);
 app.use(errController.get500);
 app.listen(ports, () => console.log(`Server is running on port ${ports}`));
