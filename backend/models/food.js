@@ -1,12 +1,11 @@
 // food.js
+const router = require('express').Router();
+const db = require('../util/database');
 
-const express = require('express');
-const router = express.Router();
-const query = require('../util/database');
+router.get('/', async(req, res, next) => {
+  const string = 'SELECT name FROM food';
+  const result = await db.query(string);
 
-router.get('/api/food', async(req, res, next) => {
-  const string = 'SELECT * FROM food';
-  const result = await query(string);
   res.json(result);
   // query(query, (error, results) => {
   //   if (error) {
