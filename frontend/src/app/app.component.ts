@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { DataDisplayComponent } from './components/data-display/data-display.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
@@ -10,6 +10,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SignupComponent } from './components/signup/signup.component';
+
 //import { HttpClient, HttpClientModule } from '@angular/common/http';
 // import { HttpModule } from '@angular/http';
 //import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -30,7 +31,8 @@ import { SignupComponent } from './components/signup/signup.component';
     NgFor,
     NgIf,
     SignupComponent,
-    RouterModule
+    RouterModule,
+    RouterLink,
   ],
   providers: [HttpClient],
   templateUrl: './app.component.html',

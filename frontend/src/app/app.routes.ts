@@ -5,12 +5,12 @@ import { PostsComponent } from './components/posts/posts.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'login', component: LoginComponent },
   { path:'signup', component: SignupComponent },
- // { path: '**', redirectTo: '' }
+ { path: '**', redirectTo: '' },
 //  {
 //   path: '',
 //   redirectTo: 'home',
@@ -18,9 +18,9 @@ const routes: Routes = [
 // },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {
-}
+// @NgModule({
+//   imports: [RouterModule.forRoot(routes)],
+//   exports: [RouterModule]
+// })
+// export class AppRoutingModule {
+// }
