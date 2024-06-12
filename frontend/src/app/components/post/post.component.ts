@@ -17,7 +17,7 @@ export class PostsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:3000/api/food').subscribe(
+    this.http.get<any[]>('http://localhost:3000/api/food/').subscribe(
       (response) => {
         this.posts = response;
       },
