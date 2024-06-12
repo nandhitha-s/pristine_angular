@@ -1,30 +1,29 @@
+// posts.component.ts
+
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../../services/post.service';
-import { DomSanitizer } from '@angular/platform-browser';
-import { NgForOf } from '@angular/common';
-// No import needed, Blob is a built-in Web API
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
   standalone: true,
-  imports: [NgForOf]
+  imports: [CommonModule],
 })
-export class PostComponent implements OnInit {
+export class PostsComponent implements OnInit {
   posts: any[] = [];
 
-  constructor(private postService: PostService, private sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.postService.getPosts().subscribe(data => {
-      this.posts = data;
-      this.posts.forEach(post => {
-        if (typeof window !== 'undefined') {
-          const blob = new Blob([post.image], { type: 'image/jpg' });
-          post.imageUrl = this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(blob));
-        }
-      });
-    });
+    this.http.get<any[]>('http://localhost:3000/api/food').subscribe(
+      (response) => {
+        this.posts = response;
+      },
+      (error) => {
+        console.error('Error fetching posts:', error);
+      }
+    );
   }
 }

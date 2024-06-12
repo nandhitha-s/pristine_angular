@@ -5,7 +5,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './components/home/home.component';
-import { PostComponent } from './components/post/post.component';
+import { PostsComponent } from './components/post/post.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -26,7 +26,7 @@ import { SignupComponent } from './components/signup/signup.component';
     ReactiveFormsModule,
     CommonModule,
     HomeComponent,
-    PostComponent,
+    PostsComponent,
     HttpClientModule,
     NgFor,
     NgIf,

@@ -5,13 +5,12 @@ import { PostComponent } from './components/posts/posts.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { PostsComponent } from './components/post/post.component';
-
-export const routes: Routes = [
+const routes: Routes = [
   { path: '', component: PostsComponent },
   { path: 'posts', component: PostComponent },
   { path: 'login', component: LoginComponent },
   { path:'signup', component: SignupComponent },
- { path: '**', redirectTo: '' },
+ // { path: '**', redirectTo: '' }
 //  {
 //   path: '',
 //   redirectTo: 'home',

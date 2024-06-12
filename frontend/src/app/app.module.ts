@@ -21,9 +21,10 @@ import { HttpClient, provideHttpClient, withFetch } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 import { Routes } from "@angular/router";
+import { PostsComponent } from "./components/post/post.component";
 @NgModule({
     declarations: [
-        AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent
+        AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent,PostsComponent
     ],
     imports: [
       BrowserModule,
