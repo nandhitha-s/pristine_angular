@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../util/database');
 
-router.get('/', (req, res, next) => {
+router.get('/api/food', (req, res, next) => {
   const query = 'SELECT * FROM food';
   db.query(query, (error, results) => {
     if (error) {
