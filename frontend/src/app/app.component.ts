@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { DataDisplayComponent } from './components/data-display/data-display.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { SignupComponent } from './components/signup/signup.component';
 //import { HttpClient, HttpClientModule } from '@angular/common/http';
 // import { HttpModule } from '@angular/http';
@@ -28,12 +29,18 @@ import { SignupComponent } from './components/signup/signup.component';
     HttpClientModule,
     NgFor,
     NgIf,
-    SignupComponent
+    SignupComponent,
+    RouterModule
   ],
   providers: [HttpClient],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'frontend';
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    console.log("route",this.router.config);
+  }
 }
