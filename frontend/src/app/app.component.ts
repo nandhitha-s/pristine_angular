@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet,RouterModule, RouterLinkActive, RouterLink } from '@angular/router';
 import { DataDisplayComponent } from './components/data-display/data-display.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
@@ -28,7 +28,10 @@ import { SignupComponent } from './components/signup/signup.component';
     HttpClientModule,
     NgFor,
     NgIf,
-    SignupComponent
+    SignupComponent,
+    RouterModule,
+    RouterLinkActive,
+    RouterLink,
   ],
   providers: [HttpClient],
   templateUrl: './app.component.html',
