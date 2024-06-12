@@ -1,8 +1,25 @@
 mat-form-field {
-    width: 100%;
+    width: 70%
+
+}
+.matt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button {
+    // float: right;
+    width: 175px;
+    // float: to-lower-case($string: "");
+    
 }
 
-button {
-    float: right;
-    width: 200px;
+.cont{
+    height: 410px;
+    justify-content: center;
+    // width: 600px;
+    border-radius: 15px;
+    box-shadow: (0 8px 20px 0 #393E46);   
 }
+
