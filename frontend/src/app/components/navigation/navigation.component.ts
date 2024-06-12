@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -10,4 +11,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class NavigationComponent {
 
+  constructor(private router: Router){}
+  signup(){
+    console.log("signup");
+    this.router.navigate(['/signup']);
+  }
 }

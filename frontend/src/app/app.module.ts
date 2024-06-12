@@ -18,13 +18,16 @@ import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
 import { HttpClient, provideHttpClient, withFetch } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
+import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 
 @NgModule({
     declarations: [
         AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent
     ],
     imports: [
-        BrowserModule,
+      BrowserModule,
+      
+        
         NoopAnimationsModule,
         AppRoutingModule,
         MatButtonModule,
@@ -34,6 +37,7 @@ import { CommonModule } from "@angular/common";
         MatInputModule,
         MatToolbarModule,
         CommonModule,
+        RouterOutlet, RouterLink, RouterLinkActive,
     ],
     providers: [
         {
