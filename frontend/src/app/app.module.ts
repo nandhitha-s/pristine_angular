@@ -21,16 +21,15 @@ import { HttpClient, provideHttpClient, withFetch } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 import { Routes } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
 import { PostsComponent } from "./components/post/post.component";
-
+import { PostService } from "./services/post.service";
 @NgModule({
     declarations: [
         AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent,PostsComponent
     ],
     imports: [
       BrowserModule,
-      
-        routes,
         NoopAnimationsModule,
         // AppRoutingModule,
         MatButtonModule,
@@ -40,13 +39,15 @@ import { PostsComponent } from "./components/post/post.component";
         MatInputModule,
         MatToolbarModule,
         CommonModule,
+        ReactiveFormsModule,
         RouterLink,RouterOutlet,RouterLinkActive,
     ],
     providers: [
         {
             provide: HttpClient,
             useFactory: withFetch 
-          }
+          },
+          PostService,
     ],
     bootstrap: [AppComponent]
 })

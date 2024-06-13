@@ -7,18 +7,19 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PostService {
-  private url = 'http://localhost:3000/api/posts';  
+  private url = 'http://localhost:3000/api/food/';  
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,) { }
 
   getPosts(): Observable<any[]> {
-    return this.httpClient.get<any[]>(this.url).pipe(
-      map(posts => posts.map(post => {
+    return this.httpClient.get<any[]>(this.url)
+    //.pipe(
+    //   map(posts => posts.map(post => {
       
-        const blob = new Blob([post.image], { type: 'image/jpeg' });
-        post.imageUrl = URL.createObjectURL(blob);
-        return post;
-      }))
-    );
+    //     const blob = new Blob([post.image], { type: 'image/jpg' });
+    //     post.imageUrl = URL.createObjectURL(blob);
+    //     return post;
+    //   }))
+    // );
   }
 }

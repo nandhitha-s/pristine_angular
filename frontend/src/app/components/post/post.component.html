@@ -1,9 +1,9 @@
-<!-- posts.component.html -->
-
 <div *ngFor="let post of posts">
-    <h1>{{ post.name }}</h1>
-    <p><strong>Description:</strong> {{ post.description }}</p>
-    <p><strong>Image:</strong></p>
-    <img [src]="post.imageUrl" alt="Food Image" width="200">
-  </div>
-  
+  <h1>{{ post.name }}</h1>
+  <p><strong>Preparation Time:</strong> {{ post.preptime }} minutes</p>
+  <p><strong>Cost:</strong> ${{ post.cost }}</p>
+  <p><strong>Stock:</strong> {{ post.stock }}</p>
+  <!-- Assuming 'image' is a URL pointing to the image -->
+  <img [src]="post.image" alt="Food Image" width="200">
+</div>
+<p>post works!</p>
