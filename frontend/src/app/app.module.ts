@@ -40,7 +40,7 @@ import { PostService } from "./services/post.service";
         MatToolbarModule,
         CommonModule,
         ReactiveFormsModule,
-        RouterLink,RouterOutlet,RouterLinkActive,
+        RouterLink,RouterOutlet,RouterLinkActive,PostsComponent,
     ],
     providers: [
         {

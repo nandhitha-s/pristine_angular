@@ -10,6 +10,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SignupComponent } from './components/signup/signup.component';
+// import { PostsComponent } from './components/post/post.component';
 
 //import { HttpClient, HttpClientModule } from '@angular/common/http';
 // import { HttpModule } from '@angular/http';
