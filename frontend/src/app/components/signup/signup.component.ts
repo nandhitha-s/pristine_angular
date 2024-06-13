@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
       password : new FormControl("", [Validators.required, Validators.minLength(7)])
     });
   }
-  onSubmit(): void {
+  signup(): void {
     console.log(this.signupForm.value);
     // this.router.navigateByUrl('/login');
   }

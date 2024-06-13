@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { routes } from './app.routes'
+import { HttpClientModule } from "@angular/common/http" 
 
 //import { AppRoutingModule } from './app-routing.module'; 
 import { AppComponent } from './app.component';
@@ -26,7 +27,7 @@ import { PostsComponent } from "./components/post/post.component";
 import { PostService } from "./services/post.service";
 @NgModule({
     declarations: [
-        AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent,PostsComponent
+        AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent,PostsComponent,HttpClientModule
     ],
     imports: [
       BrowserModule,
