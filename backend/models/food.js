@@ -1,5 +1,5 @@
 // food.js
-const router = require('express').Router();
+/*const router = require('express').Router();
 const db = require('../util/database');
 
 router.get('/', async(req, res, next) => {
@@ -17,4 +17,21 @@ router.get('/', async(req, res, next) => {
   // });
 });
 
+module.exports = router;*/
+// food.js
+const router = require('express').Router();
+const db = require('../util/database');
+
+router.get('/', async(req, res, next) => {
+  try {
+    const string = 'SELECT * FROM food';
+    const result = await db.query(string);
+    res.json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 module.exports = router;
+

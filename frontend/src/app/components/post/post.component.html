@@ -1,9 +1,23 @@
-<div *ngFor="let post of posts">
+<!-- <div *ngFor="let post of posts">
   <h1>{{ post.name }}</h1>
   <p><strong>Preparation Time:</strong> {{ post.preptime }} minutes</p>
   <p><strong>Cost:</strong> ${{ post.cost }}</p>
   <p><strong>Stock:</strong> {{ post.stock }}</p>
-  <!-- Assuming 'image' is a URL pointing to the image -->
+  Assuming 'image' is a URL pointing to the image
   <img [src]="post.image" alt="Food Image" width="200">
 </div>
-<p>post works!</p>
+<p>post works!</p> -->
+<div *ngIf="errorMessage; else postContent">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<ng-template #postContent>
+  <div *ngFor="let post of posts">
+    <h1>{{ post.name }}</h1>
+    <p><strong>Preparation Time:</strong> {{ post.preptime }} minutes</p>
+    <p><strong>Cost:</strong> ${{ post.cost }}</p>
+    <p><strong>Stock:</strong> {{ post.stock }}</p>
+    <img [src]="post.image" alt="Food Image" width="200">
+  </div>
+  <p *ngIf="posts.length === 0">No posts available.</p>
+</ng-template>
