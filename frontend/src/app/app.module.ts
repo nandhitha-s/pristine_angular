@@ -14,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SignupComponent } from "./components/signup/signup.component";
 import { LoginComponent } from "./components/login/login.component";
@@ -41,7 +42,7 @@ import { PostService } from "./services/post.service";
         MatToolbarModule,
         CommonModule,
         ReactiveFormsModule,
-        RouterLink,RouterOutlet,RouterLinkActive,PostsComponent,
+        RouterLink,RouterOutlet,RouterLinkActive,PostsComponent,MatCardModule,MatIconModule,MatButtonModule,MatToolbarModule
     ],
     providers: [
         {

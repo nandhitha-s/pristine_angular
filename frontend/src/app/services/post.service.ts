@@ -37,7 +37,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.url}/`).pipe(
+    return this.http.get<any[]>(this.url).pipe(
       catchError((error) => {
         return throwError(error);
       })

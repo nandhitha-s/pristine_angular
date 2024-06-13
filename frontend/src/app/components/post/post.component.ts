@@ -32,34 +32,42 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { CommonModule } from '@angular/common';
-
+import { MatCard,MatCardActions,MatCardAppearance,MatCardAvatar,MatCardContent,MatCardImage,MatCardSubtitle,MatCardTitle,MatCardHeader,MatCardConfig,MatCardFooter,MatCardModule } from '@angular/material/card';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-posts',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule,MatCard,MatCardActions,MatCardHeader,MatCardFooter,MatCardContent,MatButton,MatCardTitle,MatCardSubtitle,MatCardImage,MatIcon],
 })
 export class PostsComponent implements OnInit {
-  posts: any[] = [];
+  posts: any;
   errorMessage: string = '';
 
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.getPosts();
+    // this.postService.getPosts().subscribe(
+     
+    //   data => this.posts = data,
+    //   error => console.error('there is an error',error)
+    // );
+    this.get()
   }
 
-  getPosts(): void {
-    this.postService.getPosts()
-      .subscribe(
-        posts => {
-          this.posts = posts;
-        },
-        error => {
-          this.errorMessage = error;
-        }
-      );
-  }
+  get(){
+    this.postService.getPosts().subscribe((data)=>{
+      console.log('data',data)
+
+      this.posts = data[0]
+
+    })
+
+      }
+  
+
+
 }
 
