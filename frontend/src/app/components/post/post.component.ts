@@ -35,6 +35,7 @@ import { CommonModule } from '@angular/common';
 import { MatCard,MatCardActions,MatCardAppearance,MatCardAvatar,MatCardContent,MatCardImage,MatCardSubtitle,MatCardTitle,MatCardHeader,MatCardConfig,MatCardFooter,MatCardModule } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'app-posts',
   templateUrl: './post.component.html',
@@ -46,7 +47,7 @@ export class PostsComponent implements OnInit {
   posts: any;
   errorMessage: string = '';
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService,private cartService: CartService) { }
 
   ngOnInit(): void {
     // this.postService.getPosts().subscribe(
@@ -64,8 +65,14 @@ export class PostsComponent implements OnInit {
       this.posts = data[0]
 
     })
-
-      }
+  }
+  addToCart(foodId: number): void {
+    this.cartService.addToCart(foodId, 1).subscribe((response) => {
+      console.log('Item added to cart', response);
+    }, error => {
+      console.error('Error adding item to cart', error);
+    });
+  }
   
 
 

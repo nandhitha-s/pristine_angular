@@ -32,7 +32,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PostService {
-  private url = 'http://localhost:3000/api/food/';  
+  private url = 'http://localhost:3000/api/food';  
 
   constructor(private http: HttpClient) { }
 
