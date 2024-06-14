@@ -21,5 +21,19 @@ router.post('/add', async (req, res, next) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-
+router.get('/items', async (req, res, next) => {
+    try {
+      const user_id = 1; // Dummy user_id for demonstration
+      const [rows] = await db.query(`
+        SELECT f.id, f.name, f.preptime, f.image, f.cost, c.quantity
+        FROM cart c
+        JOIN food f ON c.food_id = f.id
+        WHERE c.user_id = ?
+      `, [user_id]);
+      res.json(rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
 module.exports = router;

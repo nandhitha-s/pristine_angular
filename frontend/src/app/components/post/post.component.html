@@ -16,7 +16,7 @@
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div> -->
-<!-- <div style="display:flex;flex-direction:row;justify-content:space-around;flex-wrap:wrap; margin-top: 25px;box-shadow:(2px 8px 16px 0px black )">
+<div style="display:flex;flex-direction:row;justify-content:space-around;flex-wrap:wrap; margin-top: 25px;box-shadow:(2px 8px 16px 0px black )">
   <mat-card class="example-card" style="margin: auto;height:fit-content;width:fit-content">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -28,7 +28,7 @@
       <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:medium">Cost : ${{posts[1].cost}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Add To Cart</button>
+      <button mat-button (click)="addToCart(posts[1].id)">Add To Cart</button>
       <button mat-button>Buy</button>
       <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" >
         <mat-icon>favorite</mat-icon>
@@ -46,7 +46,7 @@
       <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:medium">Cost : ${{posts[0].cost}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Add To Cart</button>
+      <button mat-button (click)="addToCart(posts[0].id)">Add To Cart</button>
       <button mat-button>Buy</button>
       <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
         <mat-icon>favorite</mat-icon>
@@ -64,7 +64,7 @@
       <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:medium">Cost : ${{posts[2].cost}}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Add To Cartt</button>
+      <button mat-button (click)="addToCart(posts[2].id)">Add To Cartt</button>
       <button mat-button>Buy</button>
       <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" >
         <mat-icon>favorite</mat-icon>
@@ -72,14 +72,14 @@
     </mat-card-actions>
   </mat-card>
 </div>
- -->
- <div style="display:flex;flex-direction:row;justify-content:space-around;flex-wrap:wrap; margin-top: 25px;box-shadow:(2px 8px 16px 0px black)">
+
+ <!-- <div style="display:flex;flex-direction:row;justify-content:space-around;flex-wrap:wrap; margin-top: 25px;box-shadow:(2px 8px 16px 0px black)">
   <mat-card *ngFor="let post of posts" class="example-card" style="margin: auto;height:fit-content;width:fit-content">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{ post.name }}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image style="height: 360px; width: 360px" [src]="post.imageUrl" alt="Food Image">
+    <img mat-card-image style="height: 360px; width: 360px" src="https://strengthandsunshine.com/wp-content/uploads/2017/12/Sesame-Candy-7.jpg">
     <mat-card-content>
       <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:medium">Preparation Time: {{ post.preptime }} hours</p>
       <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:medium">Cost: ${{ post.cost }}</p>
@@ -87,9 +87,9 @@
     <mat-card-actions>
       <button mat-button (click)="addToCart(post.id)">Add To Cart</button>
       <button mat-button>Buy</button>
-      <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+      <button mat-icon-button color="warn" aria-label="Example ico`n button with a heart icon">
         <mat-icon>favorite</mat-icon>
       </button>
     </mat-card-actions>
   </mat-card>
-</div>
+</div> -->

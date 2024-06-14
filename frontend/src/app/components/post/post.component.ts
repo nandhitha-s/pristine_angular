@@ -62,11 +62,11 @@ export class PostsComponent implements OnInit {
     this.postService.getPosts().subscribe((data)=>{
       console.log('data',data)
 
-      this.posts = data[0]
+      this.posts = data ?? [];
 
     })
   }
-  addToCart(foodId: number): void {
+  addToCart(foodId: any): void {
     this.cartService.addToCart(foodId, 1).subscribe((response) => {
       console.log('Item added to cart', response);
     }, error => {

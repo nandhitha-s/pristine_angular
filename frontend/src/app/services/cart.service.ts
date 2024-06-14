@@ -10,4 +10,7 @@ export class CartService {
   addToCart(foodId: number, quantity: number): Observable<any> {
     return this.http.post(`${this.baseUrl}/add`, { food_id: foodId, quantity });
   }
+  getCartItems(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/items`);
+  }
 }
