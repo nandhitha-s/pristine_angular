@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
 //const cors = require('cors');
@@ -6,10 +7,12 @@ const cartRouter = require("./models/cart");
 const foodRouter = require("./models/food");
 const errController = require('./controllers/error');
 const app = express();
-
 const ports = process.env.PORT || 3000;
 app.use(bodyParser.json());
 //app.use(cors(corsOptions));
+// app.use(cors({
+//     origin: 'http://localhost:55484' 
+//   }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

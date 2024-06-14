@@ -28,7 +28,7 @@ import { PostsComponent } from "./components/post/post.component";
 import { PostService } from "./services/post.service";
 @NgModule({
     declarations: [
-        AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent,PostsComponent,HttpClientModule
+        AppComponent, NavigationComponent, SignupComponent, LoginComponent, HomeComponent,PostsComponent
     ],
     imports: [
       BrowserModule,
@@ -42,6 +42,7 @@ import { PostService } from "./services/post.service";
         MatToolbarModule,
         CommonModule,
         ReactiveFormsModule,
+        HttpClientModule,
         RouterLink,RouterOutlet,RouterLinkActive,PostsComponent,MatCardModule,MatIconModule,MatButtonModule,MatToolbarModule
     ],
     providers: [
