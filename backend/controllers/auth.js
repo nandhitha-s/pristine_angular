@@ -15,6 +15,7 @@ exports.signup = async (req, res, next) => {
             password: hashedPassword
         }
         const result = await User.save(userDetails);
+        console.log("hello");
         res.status(201).json({ message: 'user registered successfully!' });
     } catch (err) {
         if(!err.statusCode) {
